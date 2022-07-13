@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
+import requests
 
-with open("index.html", "r") as f:
-    doc = BeautifulSoup(f, "html.parser")
+url = "https://edition.cnn.com/travel/article/scenic-airport-landings-2020/index.html"
 
-print(doc.prettify())
+result = requests.get(url)
+print(result.text)
